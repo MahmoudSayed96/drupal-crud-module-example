@@ -16,10 +16,8 @@ use Drupal\file\Entity\File;
 /**
  * Implement CRUD class operations.
  */
-class CRUDController extends ControllerBase
-{
-    public function index()
-    {
+class CRUDController extends ControllerBase {
+    public function index() {
         //create table header
         $header_table = [
             'id' => $this->t('ID'),
@@ -68,8 +66,7 @@ class CRUDController extends ControllerBase
         return $form;
     }
 
-    public function show(int $id)
-    {
+    public function show(int $id) {
         $conn = Database::getConnection();
 
         $query = $conn->select('crud_table', 'm')
