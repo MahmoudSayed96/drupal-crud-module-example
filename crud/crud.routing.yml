@@ -1,0 +1,31 @@
+crud.display_data:
+  path: /crud/all
+  defaults:
+    _controller: Drupal\crud\Controller\CRUDController::index
+    _title: "All Data"
+  requirements:
+    _permission: "access content"
+
+crud.show_data:
+  path: /crud/{id}/show
+  defaults:
+    _controller: Drupal\crud\Controller\CRUDController::show
+    _title: "Show Data"
+  requirements:
+    _permission: "access content"
+
+crud.add_form:
+  path: /crud/add
+  defaults:
+    _form: Drupal\crud\Form\AddForm
+    _title: "Add Data"
+  requirements:
+    _access: "TRUE"
+
+crud.delete_form:
+  path: /crud/{id}/delete
+  defaults:
+    _form: Drupal\crud\Form\DeleteForm
+    _title: "Delete Data"
+  requirements:
+    _access: "TRUE"
